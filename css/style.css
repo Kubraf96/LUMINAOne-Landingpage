@@ -1,0 +1,441 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    background-color: #000;
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(6px);  /* let sløringseffekt */
+    z-index: 1000;               /* sørg for at den ligger over andre elementer */
+}
+
+/* Hele topbaren */
+.topbar {
+  background: #0f0f0f;         /* lidt lysere end sort */
+  color: #e6e6e6;
+  font-size: 13px;
+}
+
+/* Layout container */
+.topbar__inner {
+  display: flex;
+  justify-content: space-between; /* venstre side og højre side adskilt */
+  align-items: center;
+  max-width: 1280px;              /* matcher headers bredde */
+  max-height: 38px;
+  margin: 0 auto;
+  padding: 0px 24px;              /* justér efter Figma */
+}
+
+/* VENSTRE SIDE - tom, så højre side skubbes mod højre */
+.topbar__left {
+  flex: 1; /* udfylder pladsen og presser alt andet til højre */
+}
+
+/* HØJRE SIDE */
+.topbar__right {
+  display: flex;
+  align-items: center;
+  gap: 12px;                       /* afstand mellem kundeservice, globe og sprogeksempler */
+}
+
+/* Kundeservice link */
+.topbar__support a {
+  color: inherit; /* arver farven fra forældre i denne sammenhæng.topbar */
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Sprogknapperne */
+.topbar__lang {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  padding: 4px 6px;
+}
+
+/* Globe ikon */
+.topbar__icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+}
+
+/* Den lille | separator */
+.topbar__divider {
+  color: rgba(255,255,255,0.3);
+}
+
+/* Alt hvad der er i header top-baren bliver sat i flexbox */
+.header__top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;                         /* afstand mellem elementerne */
+    padding: 8px 16px;
+    
+}
+
+.header__logo img {
+    height: 42px;
+    width: 51px;
+}
+
+.header__logo {
+flex: 0 0 auto;
+}
+
+.header__search-bar {
+     flex: 1;                           /* fylder al pladsen i midten */
+    display: flex;                      /* gør det muligt at centrere input */
+    justify-content: center;
+    
+}
+
+.header__actions ul {
+    list-style: none;                   /* Fjern standard punktopstilling */
+    padding: 8;
+    margin: 0;
+}
+
+.header__actions li {
+    display: inline-block;              /* Vis elementerne i en linje */
+}
+
+.header__actions img {
+    height: 22px;   
+    width: auto;    /* holder korrekt proportion */
+}
+ 
+.header__search-bar__input {
+    width: 100%;
+    max-width: 946px;                   
+    height: 44px;
+    border-radius: 20px;
+    padding: 0 20px;
+    padding-left: 50px;
+    background-image: url('../images/search-icon.png');
+    background-repeat: no-repeat;
+    background-position: 16px center;  /* placerer ikonet pænt */
+    background-size: 20px;             /* ikonets størrelse */
+}
+
+
+
+.header__actions {
+  flex: 0 0 auto;        /* 0 grow, 0 shrink basis auto */
+  display: flex;            /* gør ikoner inline og giver mulighed for gap */
+  gap: 18px;                /* afstand mellem ikoner */
+  align-items: center;      /* centrerer ikoner vertikalt */
+  text-align: right;
+}
+
+.header__nav-bar {
+  background: #000;         /* samme farve som header, så det flugter */
+  padding: 12px 24px;         /* lodret og horisontal luft */
+  width: 100%;
+  box-sizing: border-box;     /* sørger for at padding ikke skubber layoutet */
+}
+
+/* Selve listen — gør menupunkterne inline/horisontale */
+.header__nav-bar ul {
+  list-style: none;           /* fjern bullets */
+  margin: 0;                  /* fjern browser default margin */
+  padding: 0;                 /* fjern browser default padding */
+  display: flex;              /* læg menupunkter på en række */
+  gap: 32px;                  /* afstand mellem menupunkter */
+  align-items: center;        /* centrer dem vertikalt */
+  max-width: 1280px;          /* match resten af headerens max-width */
+  margin-left: auto;          /* centrer indenfor header (venstre+højre auto) */
+  margin-right: auto;
+}
+
+/* Selve link-styling */
+.header__nav-bar a {
+  color: #ffffff;           
+  text-decoration: none;      /* ingen underline */
+  font-size: 16px;            /* typisk menu-tekststørrelse */
+  font-weight: 500;           /* medium vægt for bedre læsbarhed */
+  opacity: 0.9;               /* lidt nedtonet som standard */
+  padding: 6px 0;             /* lidt lodret padding for klikbarhed */
+}
+
+/* Hover/active states for bedre UI-feedback */
+.header__nav-bar a:hover,
+.header__nav-bar a:focus {
+  opacity: 1;
+  text-decoration: underline; /* understreg ved hover */
+}
+.hero {
+    background-image: url('../images/hero.png');
+    background-size: cover;        /* Fylder hele området */
+    background-position: center;   /* Holder fokus i midten */
+    background-repeat: no-repeat;  /* Ingen gentagelse */
+    height: 100vh;                 /* Fylder hele højden af viewporten */
+    position: relative;            /* For eventuelle absolut positionerede børn */
+    width: 100%;                   /* Fylder hele bredden */  
+}
+
+/* Container til teksten */
+.hero__content {
+    position: absolute;            /*Kan placeres over billedet*/
+    top: 50%;                      /*Flytter toppen ned til midten af hero sektionen*/
+    left: 80px;                    /*Flytter teksten ind fra venstre, så det ikke sidder helt ude i kanten.*/
+    transform: translateY(-50%);   /*Centrerer teksten vertikalt ved at flytte den op med halvdelen af dens egen højde*/
+    color: white;
+    max-width: 480px;              /* Begrænser bredden af teksten for bedre læsbarhed */
+    }
+
+/* Overskrift LUMINAONE */
+.hero__content h1 {
+    font-size: 72px;          
+    font-weight: 700;             /* Hvor fed skriften er */
+    margin: 0 0 24px 0;           /* Lidt afstand under overskriften */
+    line-height: 0.95;            /* Tættere linjeafstand for stor tekst */
+    letter-spacing: 0.5px;        /* Gør den mere skarp som i designet */
+}
+
+/* Undertekst */
+.hero__content p {
+    font-size: 24px;
+    margin: 0 0 18px 0;
+    line-height: 1.3;
+    opacity: 0.95;
+}
+
+/* TRUSTPILOT */
+.trustpilot { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;       /* centrer ALT, også teksten */
+    justify-content: center;
+    width: 100%;
+    gap: 6px;                  /* fylder hele bredden af hero sektionen */
+}
+
+.trustpilot img {
+    width: 208px;                
+    height: 80px;
+    display:block;             /* fjerner evt. ekstra plads under billedet */
+    margin:0;                  /* fjerner evt. margin */       
+}
+
+/* Trustpilot tekst */
+.trustpilot__text {
+    display: flex;
+    justify-content: center;   /* centrer horisontalt */
+    align-items: center;       /* centrer vertikalt hvis ting har forskellig højde */
+    width: 100%;               /* gør tekstområdet lige så bredt som trustpilot-boksen */
+    text-align: center;        /* centrer teksten i hvert span */
+    gap: 12px;                 /* afstand mellem “4.8/5” og “4.392 anmeldelser” */
+}
+
+.hero__title .lumina {
+    color: white;
+}
+
+.hero__title .one {
+    color: #FFE2F9;
+}
+
+.hero__button {
+    padding: 12px 32px;
+    font-size: 20px;
+    font-weight: 600;
+    color:#19E4BF;
+    background: transparent;
+    border: 2px solid #01FACC;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    display: block;
+    margin: 0 auto;   /* centrerer knappen horisontalt */
+    margin-top: 16px;
+}
+
+.hero__button:hover {
+    background: #01FACC;         /* farven som fyld ved hover */
+    color: #052312;
+    transform: translateY(-2px); /* lille hover-bevægelse */
+}
+
+.hero__:active {
+    box-shadow: 0 6px 16px rgba(0, 245, 196, 0.4); /* drop shadow */
+    transform: translateY(2px); /* lille “tryk ned” effekt */
+}
+
+/* RESPONSIVE STYLES - skalerer når skærmen er mindre */
+@media (max-width: 920px) {
+  .hero__content h1 { font-size: 48px; margin-bottom: 8px; }
+  .hero__content p  { font-size: 18px; }
+  .trustpilot img    { height: 44px; }
+}
+
+
+/* ================= PRODUCT CARD COMPONENT ================= */
+
+/* Overordnet grid: billede | indhold */
+.product-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* to kolonner - justér 40%/60% nedenfor hvis du vil */
+  gap: 40px;
+  align-items: center;
+  padding: 48px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #fff;               /* hvis siden er lys; ellers brug transparent */
+}
+
+/* Gør billedkolonnen lidt smallere end indholdet */
+.product-card {
+  grid-template-columns: 50% 50%;
+}
+
+/* MEDIE (figure) */
+.product-card__media {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product-card__img {
+  width: 90%;            /* fylder pænt uden at gå helt til kanten */
+  max-width: 520px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* INDHOLD (tekstkolonne) */
+.product-card__content {
+  padding: 6px 12px;
+  color: #111;           /* tekstfarve */
+  max-width: 520px;
+}
+
+/* Titel */
+.product-card__title {
+  font-size: 28px;
+  margin: 0 0 12px 0;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+/* RATING linje (stjerner + tekst) */
+.product-card__rating {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.stars {
+  color: #FFCC00;       /* gul stjernefarve */
+  font-size: 20px;
+  letter-spacing: 4px;  /* lidt afstand mellem stjernerne */
+}
+
+/* rating-tekst */
+.rating-text {
+  display: flex;
+  gap: 10px;
+  color: #1A1A1A;
+  font-size: 14px;
+}
+.rating-score { font-weight: 700; color:#1A1A1A; }
+.rating-count { opacity: 0.85; }
+
+/* meta (år) */
+.product-card__meta {
+  font-size: 13px;
+  color: #1A1A1A;
+  margin-bottom: 12px;
+}
+
+/* beskrivelse */
+.product-card__desc {
+  color: #1A1A1A;
+  line-height: 1.6;
+  margin: 0 0 16px 0;
+  font-size: 15px;
+}
+
+/* læs mere link */
+.product-card__readmore {
+  display: inline-block;
+  margin-left: 6px;
+  color: #1A1A1A;
+  font-weight: 600;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+/* SWATCHES (farveknapper) */
+.product-card__swatches {
+  display: flex;
+  gap: 12px;
+  margin: 14px 0 22px 0;
+  align-items: center;
+}
+.swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid rgba(0,0,0,0.12);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  cursor: pointer;
+  padding: 0;
+}
+
+/* active/focus state for better a11y */
+.swatch:focus, .swatch:hover {
+  outline: none;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+/* CTA knap */
+.product-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 28px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #002; /* tekstfarve inde i knap - justér hvis nødvendigt */
+  background: #00F7D2; /* neon/turkos fill - justér efter din farve */
+  border: none;
+  border-radius: 28px; /* rund kant */
+  cursor: pointer;
+  transition: transform .14s ease, box-shadow .14s ease;
+}
+
+/* CTA hover + active (tryk ned) */
+.product-card__cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,247,210,0.18);
+}
+.product-card__cta:active {
+  transform: translateY(1px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* cart icon visuel styling (brug gerne SVG i produktion) */
+.cart-icon { font-size: 20px; }
+
+/* RESPONSIVE: kolonner bliver 1 kolonne på små skærme */
+@media (max-width: 900px) {
+  .product-card {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 28px 16px;
+  }
+  .product-card__img { width: 60%; } /* mindre billede på mobil */
+  .product-card__title { font-size: 22px; }
+  .product-card__cta { width: 100%; justify-content: center; }
+}

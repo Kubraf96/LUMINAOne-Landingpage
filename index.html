@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="da">    
+<html>
     <head>
         <title>LuminaONE</title>
         <link type="text/css" rel="stylesheet" href="css/style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Koulen&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
     <body>
         <main>
@@ -22,7 +18,7 @@
 
             <!-- Kundeservice -->
             <p class="topbar__support">
-             <a href="LuminaAudio.dk/kontakt">Kundeservice</a>
+                Kundeservice: <a href="tel:+45XXXXXXXX">+45 XX XX XX XX</a>
             </p>
 
             <!-- Globe + DK -->
@@ -44,8 +40,7 @@
                     <article class="header__logo">
                         <img src="images/logo.png" alt="Logo">
                     </article>
-                        <article class="header__search-bar">
-                        <img src="images/search-icon.svg" alt="" class="header__search-icon">
+                    <article class="header__search-bar">
                         <input type="text" placeholder="Opdag nye lydoplevelser…" class="header__search-bar__input">
                     </article>
                     <article class="header__actions">
@@ -81,7 +76,6 @@
             <img src="images/trustpilot.svg" alt="Trustpilot">
             <div class="trustpilot__text">
                 <span>4.8/5</span>
-                 <span class="trustpilot__tiny-star">★</span>
                 <span>4.392 anmeldelser</span>
             </div>
         </article>
@@ -90,41 +84,18 @@
 </section>   
         </main>
 
-        <!-- PRODUCT SECTION -->
-<section id="product-section" class="product-section">
-  <article class="container">
-    <div class="product-image-container">
-         <img class="product-image" src="./images/lavendermist.png" alt="LUMINA One produktbillede">
-    </div>
-    </div>
-    <div class="product-description-container">
-        <h1 class="product-title">LUMINA One</h1>
-        <div class="product-rating">
-        <img src="./images/yellowstars.svg" alt="5 stjerner" class="rating-stars-img">
-         <span class="product-rating__text">5/5 (78 anmeldelser)</span>
-    </div>
-        <p class="product-price">1995,-</p>
-        <p class="product-text">En stilfuld bærbar højttaler designet til dig, der vil have både stemning og stor lyd i ét. One kombinerer nordisk minimalisme med kraftfuld, klar lyd og et blødt LED-lys, der følger musikken. Perfekt til strandture, picnic, yoga eller hyggeaftener med vennerne og let nok til at tage med overalt.</p>
-        <a class="product-more-link" href="#">Læs mere</a>
-              <p class="product-color-label">Dusty Rose</p>
-        <ul class="product-colors">
-            <li class="product-color product-colors__lavender-mist">1
-            <li class="product-color product-colors__dusty-rose">2</li>
-            <li class="product-color product-colors__moonlight-white">3</li>
-            <li class="product-color product-colors__sage-green">4</li>
-        </ul>
-        <button class="product-btn">
-        Tilføj til kurv
-      </button>
-    </div>
-  </article>
+        <!-- PRODUCTS SECTION -->
+<section id="products-section" class="products-section">
+  <div class="container">
+    <h2>Nye produkter</h2>
+    <div id="product-grid" class="product-grid"></div>
+  </div>
 </section>
 
 <!-- FOOTER -->
     <footer>
         ...
-    </footer>    
-        <script src="./js/index.js" type="text/javascript"></script>
+    </footer>        
+<script src="index.js/"></script>
     </body>
-
 </html>

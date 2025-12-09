@@ -1,9 +1,23 @@
 {
   "luminaProducts": [
-    {"id": "product-colors__lavender-mist", "name":"Lavender Mist","color":"#E6BEF2", "imageUrl": "../images/lavendermist.png"},
-    {"id": "product-colors__dusty-rose", "name":"Dusty Rose","color":"#DDA1A1", "imageUrl": "../images/dustyrose.png"},
-    {"id": "product-colors__moonlight-white", "name":"Moonlight White","color":"#E9E1D1", "imageUrl": "../images/moonlightwhite.png"},
-    {"id": "product-colors__sage-green", "name":"Sage Green","color":"#A4AB8B", "imageUrl": "../images/sagegreen.png"}
+    {"id": "product-colors__lavender-mist",
+    "name":"Lavender Mist",
+    "color":"#E6BEF2",
+    "imageUrl": "../images/lavendermist.png"},
+
+    {"id": "product-colors__dusty-rose",
+    "name":"Dusty Rose",
+    "color":"#DDA1A1",
+    "imageUrl": "../images/dustyrose.png"},
+
+    {"id": "product-colors__moonlight-white",
+    "name":"Moonlight White",
+    "color":"#E9E1D1",
+    "imageUrl": "../images/moonlightwhite.png"},
+    {"id": "product-colors__sage-green",
+    "name":"Sage Green",
+    "color":"#A4AB8B",
+    "imageUrl": "../images/sagegreen.png"}
   ]
 }
 

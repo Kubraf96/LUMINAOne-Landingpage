@@ -12,11 +12,19 @@ async function initApp() {
   // Sørge for at ændre billeder når man vælger en ny produkt farve
   setProductChangeEventListeners();
 
+
+  // Tilføjer event listener til "Køb nu" knappen i hero sektionen så den scroller ned til produkt sektionen
+  document.querySelector('.hero__button').addEventListener('click', () => {
+  document.querySelector('#product-section').scrollIntoView({
+    behavior:'smooth'
+  });
+});
+
   // Tilføjer event listener til "Add to Cart" knappen
   //finder knappen og modal'en i DOM'en
   const productBtn = document.getElementsByClassName('product-btn')[0];
 
-  console.log(productBtn);
+  console.log(productBtn); 
   
   //finder modal'en i DOM'en
   const modal = document.getElementsByClassName('add-to-cart__modal')[0];
@@ -28,7 +36,7 @@ async function initApp() {
   productBtn.addEventListener('click', (e) => {
     e.stopPropagation();
 
-    modal.classList.add('add-to-cart__modal--show');
+    modal.classList.add('add-to-cart__modal--show'); 
     modal.classList.remove('add-to-cart__modal--hide');
   });
 
@@ -100,17 +108,14 @@ function setAddToCartModalEventListeners() {
 function setProductChangeEventListeners() {
   // Finder produktbilledet i DOM'en og sætter det til det første billede i allProductImages
   const img = document.querySelector('.product-image');
-
   // lille sikkerhed, hvis den ikke kan finde billederne eller DOM elementet så kører resten af koden ikke
   if (!img || allProductImages.length === 0) {
     return;
   }
-
   img.src = allProductImages[0].imageUrl;
-
   // Finder alle elementer med klassen "product-color" fra HTML'en
   const elements = document.querySelectorAll('.product-color');
-
+  
   // Tilføjer et klik-event til hver farveknap
   elements.forEach(element => {
     element.addEventListener('click', e => {

@@ -596,7 +596,7 @@ flex: 0 0 auto;
 
 /* X-knappen */
 .add-to-cart__modal__cancel {
-  background: transparent; /
+  background: transparent;
   border: none;
   font-size: 20px;
   cursor: pointer;

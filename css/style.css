@@ -459,10 +459,10 @@ flex: 0 0 auto;
 
 /* KNAP: TILFØJ TIL KURV */
 .product-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
+  display: inline-flex;          /* gør det muligt at centrere ikon + tekst */
+  align-items: center;           /* centrerer vertikalt */
+  justify-content: center;       /* centrerer horisontalt */
+  gap: 0.5rem; 
   padding: 0.5rem 6rem;
   border-radius: 0.75rem;
   border: none;
@@ -475,14 +475,14 @@ flex: 0 0 auto;
     0 5px 20px rgba(0, 255, 209, 0.45),
     0 0 0 1px rgba(0, 0, 0, 0.7);
   transition:
-    transform 0.12s ease,
-    box-shadow 0.12s ease,
-    filter 0.12s ease;
+    transform 0.12s ease,       /* bevægelse */
+    box-shadow 0.12s ease,      /* skygge */
+    filter 0.12s ease;          /* brightness ændring */
 }
 
 
 .product-btn:hover {
-  transform: translateY(-0.0625rem);
+  transform: translateY(-0.0625rem); /* lille hover-bevægelse */
   box-shadow:
     0 5px 32px rgba(0, 255, 209, 0.6),
     0 0 0 1px rgba(0, 0, 0, 0.7);
@@ -528,17 +528,151 @@ flex: 0 0 auto;
 
 /* MODAL (POP-UP) TILFØJET TIL KURV */
 .add-to-cart__modal {
-  position: fixed;
+  position: fixed;                     /* ligger over alt andet */
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  z-index: 2000;
+  transform: translate(-50%, -50%);    /* centrerer den perfekt */
+  z-index: 9999;                       /* ligger over alt andet */
+
+  /* Den må gerne være gemt fra start */
+  opacity: 0;
+  visibility: hidden;                  /* skjult som standard */
+  transition: opacity 0.25s ease;      /*blød overgang ved visning/ skjulning */
+  /* Styling */
+  width: 465px;                        /* fast bredde */
+  height:291px;                        /* fast højde */
+  padding: 16px;                       /* indvendig padding */
+  background: #F4F4F4;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
 }
 .add-to-cart__modal--hide {
-  display: none;
+  opacity: 0;                          /* skjult */
+  visibility: hidden;                  /* skjult */
 }
 
 .add-to-cart__modal--show {
-  display: block;
+  opacity: 1;                         /*styling når modalen vises */
+  visibility: visible;    
+}
+
+.add-to-cart__modal__cancel {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.add-to-cart__modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+/* ikon + tekst */
+.add-to-cart__modal-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* den grønne cirkel med flueben */
+.add-to-cart__modal-check {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #3D8B23;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #E6E6E6;
+  font-size: 14px;
+}
+
+/* X-knappen */
+.add-to-cart__modal__cancel {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* midterdelen – lidt luft og evt. en bundstreg til knapområdet */
+.add-to-cart__modal-body {
+  padding: 12px 0 16px;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+/* række med billede + tekst */
+.add-to-cart__modal-product {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* produktbilledet */
+.add-to-cart__modal-image {
+  width: 72px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* tekstblok ved siden af billedet */
+.add-to-cart__modal-product-text {
+  display: flex; 
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* navn, variant og pris – meget basic styling for nu */
+.add-to-cart__modal-product-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.add-to-cart__modal-product-variant {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.add-to-cart__modal-product-price {
+  margin-top: 6px;
+  font-size: 0.9rem;
+}
+
+/* footer med knapperne */
+.add-to-cart__modal-footer {
+  display: flex;
+  gap: 16px;
+  padding-top: 16px;
+}
+
+/* fælles knap-style */
+.add-to-cart__modal-btn {
+  flex: 1; /* de fylder lige meget */
+  border: none;
+  border-radius: 999px;
+  padding: 14px 18px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* sort knap */
+.add-to-cart__modal-btn--secondary {
+  background: #1A1A1A;
+  color: #EFEFEF;
+}
+
+/* grøn knap */
+.add-to-cart__modal-btn--primary {
+  background: #01FACC;
+  color: #1A1A1A;
 }

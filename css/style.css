@@ -567,9 +567,9 @@ flex: 0 0 auto;
 }
 
 .add-to-cart__modal-header {
-  display: flex;
+  display: flex;                        /*ikon og tekst på en række */
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between;       /*ikon til venstre, X-knap til højre */
   gap: 16px;
   margin-bottom: 16px;
 }
@@ -596,7 +596,7 @@ flex: 0 0 auto;
 
 /* X-knappen */
 .add-to-cart__modal__cancel {
-  background: transparent;
+  background: transparent; /
   border: none;
   font-size: 20px;
   cursor: pointer;
@@ -617,8 +617,8 @@ flex: 0 0 auto;
 
 /* produktbilledet */
 .add-to-cart__modal-image {
-  width: 72px;
-  height: auto;
+  width: 97.5px;
+  height: 97.5;
   border-radius: 8px;
   object-fit: cover;
 }
@@ -627,7 +627,7 @@ flex: 0 0 auto;
 .add-to-cart__modal-product-text {
   display: flex; 
   flex-direction: column;
-  gap: 2px;
+  gap: 0px;
 }
 
 /* navn, variant og pris – meget basic styling for nu */
@@ -655,7 +655,7 @@ flex: 0 0 auto;
 
 /* fælles knap-style */
 .add-to-cart__modal-btn {
-  flex: 1; /* de fylder lige meget */
+  flex: 1;                    /* de fylder lige meget */
   border: none;
   border-radius: 999px;
   padding: 14px 18px;
